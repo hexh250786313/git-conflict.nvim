@@ -650,7 +650,7 @@ function M.conflicts_to_qf_items(callback)
       }
       local visited_buf = nil
 
-      if next(visited_buffers[filename]) ~= nil then
+      if visited_buffers[filename] ~= nil then
         visited_buf = visited_buffers[filename]
       end
 
