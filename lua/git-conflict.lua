@@ -478,7 +478,7 @@ local function fetch_conflicts()
   ---@diagnostic disable-next-line: missing-parameter
   local buf_dir = fn.expand('%:p:h')
   for repo_path, time in pairs(visited_repos) do
-    if vim.startswith(buf_dir, repo_path) and (time and os.difftime(os.time(), time) <= 60) then
+    if vim.startswith(buf_dir, repo_path) and (time and os.difftime(os.time(), time) <= 3) then
       return
     end
   end
