@@ -650,15 +650,15 @@ function M.conflicts_to_qf_items(callback)
       }
       local visited_buf = nil
 
-      if visited_buffers[filename] ~= nil then
+      if visited_buffers[filename] ~= nil and next(visited_buffers[filename]) ~= nil then
         visited_buf = visited_buffers[filename]
       end
 
-      if visited_buf then
-        quickfix_items_from_positions(item, items, visited_buf)
-      else
+      -- if visited_buf then
+        -- quickfix_items_from_positions(item, items, visited_buf)
+      -- else
         table.insert(items, item)
-      end
+      -- end
     end
     callback(items)
   end)
